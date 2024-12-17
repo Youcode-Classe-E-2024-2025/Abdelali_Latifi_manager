@@ -24,4 +24,48 @@
         </div>
     </header>
 
-   
+    <!-- Form Section -->
+    <section id="FormSignUp"  class="flex flex-col items-center w-full max-w-lg mx-auto mt-10 p-6 hidden">
+        <h2 class="text-2xl font-bold mb-4">Log In</h2>
+        <form action="#" class="w-full space-y-4">
+            <div>
+                <label for="first-name" class="block text-xl font-bold">First Name</label>
+                <input id="first-name" type="text" placeholder="Enter your first name" class="w-full p-2 rounded-lg bg-violet-950  focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+            </div>
+            <div>
+                <label for="last-name" class="block text-xl font-bold">Last Name</label>
+                <input id="last-name" type="text" placeholder="Enter your last name" class="w-full p-2 rounded-lg bg-violet-950  focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+            </div>
+            <div>
+                <label for="email" class="block text-xl font-bold">Email</label>
+                <input id="email" type="email" placeholder="Enter your email" class="w-full p-2 rounded-lg bg-violet-950  focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+            </div>
+            <div>
+                <label for="password" class="block text-xl font-bold">Password</label>
+                <input id="password" type="password" placeholder="Enter your password" class="w-full p-2 rounded-lg bg-violet-950  focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+            </div>
+            <button type="submit" class="w-full p-3 mt-4 font-bold text-white bg-black rounded-lg hover:bg-green-600">
+                Submit
+            </button>
+        </form>
+    </section>
+    <!--2 Form Section -->
+    <section id="FormSignIn" class="flex flex-col items-center w-full max-w-lg mx-auto mt-10 p-6">
+        <h2 class="text-2xl font-bold mb-4">Log In</h2>
+        <form action="#" class="w-full space-y-4">
+            <div>
+                <label for="email" class="block text-xl font-bold">Email</label>
+                <input id="email" type="email" placeholder="Enter your email" class="w-full p-2 rounded-lg bg-violet-950  focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+            </div>
+            <div>
+                <label for="password" class="block text-xl font-bold">Password</label>
+                <input id="password" type="password" placeholder="Enter your password" class="w-full p-2 rounded-lg bg-violet-950  focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+            </div>
+            <button type="submit" class="w-full p-3 mt-4 font-bold text-white bg-black rounded-lg hover:bg-green-600">
+                Submit
+            </button>
+        </form>
+    </section>
+    <script src="main.js" ></script>
+</body>
+</html>
