@@ -8,7 +8,7 @@ document.getElementById("signUpForm").addEventListener("submit", function(event)
 
     const nameRegex = /^[A-Za-z]{2,}$/; 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; 
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/; 
     let isValid = true;
 
     // Validate First Name

@@ -18,10 +18,10 @@
     <!-- Form Section -->
     <section id="FormSignUp" class="flex flex-col items-center w-full max-w-lg mx-auto mt-10 p-6">
         <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
-        <form id="signUpForm" action="#" class="w-full space-y-4">
+        <form id="signUpForm" action="#" method="post" class="w-full space-y-4">
             <div>
                 <label for="first-name" class="block text-xl font-bold">First Name</label>
-                <input id="first-name" type="text" placeholder="Enter your first name" class="w-full p-2 rounded-lg bg-violet-950 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
+                <input id="first-name"  type="text" placeholder="Enter your first name" class="w-full p-2 rounded-lg bg-violet-950 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
             </div>
             <div>
                 <label for="last-name" class="block text-xl font-bold">Last Name</label>
@@ -40,6 +40,6 @@
             </button>
         </form>
     </section>
-    <script src="registre.js" ></script>
+    <script src="./js/registre.js" ></script>
 </body>
 </html>
