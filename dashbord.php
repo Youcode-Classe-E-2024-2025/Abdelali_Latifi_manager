@@ -45,110 +45,105 @@
     <main class="flex-grow p-6">
         
         <!-- Section Docteurs -->
-        <section id="doctors">
-            <h2 class="text-xl font-semibold mb-4">Liste des Docteurs</h2>
-            <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500" onclick="showAddDoctorForm()">Ajouter un Docteur</button>
-            <table class="w-full table-auto  rounded-lg shadow-md">
-                <thead class="bg-black">
-                    <tr>
-                        <th class="px-4 py-2 text-left">ID</th>
-                        <th class="px-4 py-2 text-left">Prénom</th>
-                        <th class="px-4 py-2 text-left">Nom</th>
-                        <th class="px-4 py-2 text-left">Spécialisation</th>
-                        <th class="px-4 py-2 text-left">Numéro de téléphone</th>
-                        <th class="px-4 py-2 text-left">Email</th>
-                        <th class="px-4 py-2 text-left">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Les données seront chargées dynamiquement -->
-                </tbody>
-            </table>
-        </section>
+      <!-- Section Docteurs -->
+<section id="doctors">
+    <h2 class="text-xl font-semibold mb-4">Liste des Docteurs</h2>
+    <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500" onclick="showAddDoctorForm()">Ajouter un Docteur</button>
+    <table class="w-full table-auto rounded-lg shadow-md">
+        <thead class="bg-black">
+            <tr>
+                <th class="px-4 py-2 text-left">ID</th>
+                <th class="px-4 py-2 text-left">First Name</th>
+                <th class="px-4 py-2 text-left">Last Name</th>
+                <th class="px-4 py-2 text-left">Specialization</th>
+                <th class="px-4 py-2 text-left">Phone Number</th>
+                <th class="px-4 py-2 text-left">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les données seront chargées dynamiquement -->
+        </tbody>
+    </table>
+</section>
 
-        <!-- Section Patients -->
-        <section id="patients" class="mt-8">
-            <h2 class="text-xl font-semibold mb-4">Liste des Patients</h2>
-            <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Patient</button>
-            <table class="w-full table-auto bg-black rounded-lg shadow-md">
-                <thead class="bg-black">
-                    <tr>
-                        <th class="px-4 py-2 text-left">ID</th>
-                        <th class="px-4 py-2 text-left">Prénom</th>
-                        <th class="px-4 py-2 text-left">Nom</th>
-                        <th class="px-4 py-2 text-left">Email</th>
-                        <th class="px-4 py-2 text-left">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Les données seront chargées dynamiquement -->
-                </tbody>
-            </table>
-        </section>
+<!-- Section Patients -->
+<section id="patients" class="mt-8">
+    <h2 class="text-xl font-semibold mb-4">Liste des Patients</h2>
+    <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Patient</button>
+    <table class="w-full table-auto rounded-lg shadow-md">
+        <thead class="bg-black">
+            <tr>
+                <th class="px-4 py-2 text-left">ID</th>
+                <th class="px-4 py-2 text-left">First Name</th>
+                <th class="px-4 py-2 text-left">Last Name</th>
+                <th class="px-4 py-2 text-left">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les données seront chargées dynamiquement -->
+        </tbody>
+    </table>
+</section>
 
-        <!-- Section Rendez-vous -->
-        <section id="appointments" class="mt-8">
-            <h2 class="text-xl font-semibold mb-4">Liste des Rendez-vous</h2>
-            <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Rendez-vous</button>
-            <table class="w-full table-auto bg-white rounded-lg shadow-md">
-                <thead class="bg-black">
-                    <tr>
-                        <th class="px-4 py-2 text-left">ID</th>
-                        <th class="px-4 py-2 text-left">Docteur</th>
-                        <th class="px-4 py-2 text-left">Patient</th>
-                        <th class="px-4 py-2 text-left">Date et Heure</th>
-                        <th class="px-4 py-2 text-left">Statut</th>
-                        <th class="px-4 py-2 text-left">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Les données seront chargées dynamiquement -->
-                </tbody>
-            </table>
-        </section>
+<!-- Section Rendez-vous -->
+<section id="appointments" class="mt-8">
+    <h2 class="text-xl font-semibold mb-4">Liste des Rendez-vous</h2>
+    <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Rendez-vous</button>
+    <table class="w-full table-auto rounded-lg shadow-md">
+        <thead class="bg-black">
+            <tr>
+                <th class="px-4 py-2 text-left">ID</th>
+                <th class="px-4 py-2 text-left">Doctor ID</th>
+                <th class="px-4 py-2 text-left">Patient ID</th>
+                <th class="px-4 py-2 text-left">Appointment Date</th>
+                <th class="px-4 py-2 text-left">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les données seront chargées dynamiquement -->
+        </tbody>
+    </table>
+</section>
 
-        <!-- Section Consultations -->
-        <section id="consultations" class="mt-8">
-            <h2 class="text-xl font-semibold mb-4">Liste des Consultations</h2>
-            <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter une Consultation</button>
-            <table class="w-full table-auto bg-white rounded-lg shadow-md">
-                <thead class="bg-black">
-                    <tr>
-                        <th class="px-4 py-2 text-left">ID</th>
-                        <th class="px-4 py-2 text-left">Rendez-vous</th>
-                        <th class="px-4 py-2 text-left">Date de Consultation</th>
-                        <th class="px-4 py-2 text-left">Diagnostic</th>
-                        <th class="px-4 py-2 text-left">Notes</th>
-                        <th class="px-4 py-2 text-left">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Les données seront chargées dynamiquement -->
-                </tbody>
-            </table>
-        </section>
+<!-- Section Consultations -->
+<section id="consultations" class="mt-8">
+    <h2 class="text-xl font-semibold mb-4">Liste des Consultations</h2>
+    <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter une Consultation</button>
+    <table class="w-full table-auto rounded-lg shadow-md">
+        <thead class="bg-black">
+            <tr>
+                <th class="px-4 py-2 text-left">ID</th>
+                <th class="px-4 py-2 text-left">Appointment ID</th>
+                <th class="px-4 py-2 text-left">Consultation Date</th>
+                <th class="px-4 py-2 text-left">Diagnosis</th>
+                <th class="px-4 py-2 text-left">Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les données seront chargées dynamiquement -->
+        </tbody>
+    </table>
+</section>
 
-        <!-- Section Administrateurs -->
-        <section id="admins" class="mt-8">
-            <h2 class="text-xl font-semibold mb-4">Liste des Administrateurs</h2>
-            <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Administrateur</button>
-            <table class="w-full table-auto bg-white rounded-lg shadow-md">
-                <thead class="bg-black">
-                    <tr>
-                        <th class="px-4 py-2 text-left">ID</th>
-                        <th class="px-4 py-2 text-left">Nom d'utilisateur</th>
-                        <th class="px-4 py-2 text-left">Prénom</th>
-                        <th class="px-4 py-2 text-left">Nom</th>
-                        <th class="px-4 py-2 text-left">Email</th>
-                        <th class="px-4 py-2 text-left">Rôle</th>
-                        <th class="px-4 py-2 text-left">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Les données seront chargées dynamiquement -->
-                </tbody>
-            </table>
-        </section>
+<!-- Section Administrateur -->
+<section id="admins" class="mt-8">
+    <h2 class="text-xl font-semibold mb-4">Détails de l'Administrateur</h2>
+    <table class="w-full table-auto rounded-lg shadow-md">
+        <thead class="bg-black">
+            <tr>
+                <th class="px-4 py-2 text-left">ID</th>
+                <th class="px-4 py-2 text-left">Username</th>
+                <th class="px-4 py-2 text-left">First Name</th>
+                <th class="px-4 py-2 text-left">Last Name</th>
+                <th class="px-4 py-2 text-left">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les données seront chargées dynamiquement -->
+        </tbody>
+    </table>
+</section>
+
 
     </main>
 
