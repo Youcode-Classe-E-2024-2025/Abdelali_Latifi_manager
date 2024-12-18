@@ -9,36 +9,37 @@
 <body class="bg-[url('./img/pexels-pixabay-315938.jpg')] bg-cover bg-no-repeat bg-center text-zinc-50 bg-fixed">
 
 <!-- Header -->
-<header class="bg-green-600 text-white p-4 text-center">
+<header class="bg-black text-white p-4 text-center">
     <h1 class="text-2xl font-semibold">Dashboard</h1>
-    <p>Bienvenue, Admin</p>
+    <p>Welcome, Admin</p>
 </header>
 
 <!-- Main Layout -->
-<div class="flex">
+<section class="flex">
 
     <!-- Sidebar -->
-    <aside class="w-64 bg-gray-800 text-white h-screen p-6 height-full">
-        <nav>
-            <ul>
-                <li class="mb-4">
-                    <a href="#doctors" class="text-lg hover:text-green-400">Docteurs</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#patients" class="text-lg hover:text-green-400">Patients</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#appointments" class="text-lg hover:text-green-400">Rendez-vous</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#consultations" class="text-lg hover:text-green-400">Consultations</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#admins" class="text-lg hover:text-green-400">Administrateurs</a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
+    <aside class="w-64 bg-gray-800 text-white p-6 min-h-full">
+    <nav>
+        <ul>
+            <li class="mb-4">
+                <a href="#doctors" class="text-lg hover:text-green-400">Docteurs</a>
+            </li>
+            <li class="mb-4">
+                <a href="#patients" class="text-lg hover:text-green-400">Patients</a>
+            </li>
+            <li class="mb-4">
+                <a href="#appointments" class="text-lg hover:text-green-400">Rendez-vous</a>
+            </li>
+            <li class="mb-4">
+                <a href="#consultations" class="text-lg hover:text-green-400">Consultations</a>
+            </li>
+            <li class="mb-4">
+                <a href="#admins" class="text-lg hover:text-green-400">Administrateurs</a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+
 
     <!-- Main Content -->
     <main class="flex-grow p-6">
@@ -47,8 +48,8 @@
         <section id="doctors">
             <h2 class="text-xl font-semibold mb-4">Liste des Docteurs</h2>
             <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500" onclick="showAddDoctorForm()">Ajouter un Docteur</button>
-            <table class="w-full table-auto bg-black rounded-lg shadow-md">
-                <thead class="bg-gray-200">
+            <table class="w-full table-auto  rounded-lg shadow-md">
+                <thead class="bg-black">
                     <tr>
                         <th class="px-4 py-2 text-left">ID</th>
                         <th class="px-4 py-2 text-left">Prénom</th>
@@ -70,7 +71,7 @@
             <h2 class="text-xl font-semibold mb-4">Liste des Patients</h2>
             <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Patient</button>
             <table class="w-full table-auto bg-black rounded-lg shadow-md">
-                <thead class="bg-gray-200">
+                <thead class="bg-black">
                     <tr>
                         <th class="px-4 py-2 text-left">ID</th>
                         <th class="px-4 py-2 text-left">Prénom</th>
@@ -90,7 +91,7 @@
             <h2 class="text-xl font-semibold mb-4">Liste des Rendez-vous</h2>
             <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Rendez-vous</button>
             <table class="w-full table-auto bg-white rounded-lg shadow-md">
-                <thead class="bg-gray-200">
+                <thead class="bg-black">
                     <tr>
                         <th class="px-4 py-2 text-left">ID</th>
                         <th class="px-4 py-2 text-left">Docteur</th>
@@ -111,7 +112,7 @@
             <h2 class="text-xl font-semibold mb-4">Liste des Consultations</h2>
             <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter une Consultation</button>
             <table class="w-full table-auto bg-white rounded-lg shadow-md">
-                <thead class="bg-gray-200">
+                <thead class="bg-black">
                     <tr>
                         <th class="px-4 py-2 text-left">ID</th>
                         <th class="px-4 py-2 text-left">Rendez-vous</th>
@@ -132,7 +133,7 @@
             <h2 class="text-xl font-semibold mb-4">Liste des Administrateurs</h2>
             <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Administrateur</button>
             <table class="w-full table-auto bg-white rounded-lg shadow-md">
-                <thead class="bg-gray-200">
+                <thead class="bg-black">
                     <tr>
                         <th class="px-4 py-2 text-left">ID</th>
                         <th class="px-4 py-2 text-left">Nom d'utilisateur</th>
@@ -151,7 +152,7 @@
 
     </main>
 
-</div>
+</section>
 
 <script src="app.js"></script>
 </body>
