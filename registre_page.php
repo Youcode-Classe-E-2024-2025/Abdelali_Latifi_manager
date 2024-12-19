@@ -1,16 +1,5 @@
 <?php
-include('connexion.php');
-if(isset($_POST['submit'])){
-    $first_name = htmlspecialchars(trim($_POST['first_name']));
-    $last_name = htmlspecialchars(trim($_POST['last_name']));
-    $email = $_POST['email'];
-    $password = htmlspecialchars(trim($_POST['password']));
-    $query = "INSERT INTO patients (first_name, last_name, email, password)
-    VALUES ('$first_name','$last_name','$email','$password') ";
-    if(mysqli_query($con, $query)){
-    echo"hello fucking world";
-    }
-}
+include('registre.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +20,7 @@ if(isset($_POST['submit'])){
     <!-- Form Section -->
     <section id="FormSignUp" class="flex flex-col items-center w-full max-w-lg mx-auto mt-10 p-6">
         <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
-        <form id="signUpForm" action="#" method="post" class="w-full space-y-4">
+        <form action="#" method="post" class="w-full space-y-4">
             <div>
                 <label for="first-name" class="block text-xl font-bold">First Name</label>
                 <input id="first-name" name="first_name" type="text" placeholder="Enter your first name" class="w-full p-2 rounded-lg bg-violet-950 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">

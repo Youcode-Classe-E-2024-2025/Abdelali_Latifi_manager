@@ -22,19 +22,19 @@
     <nav>
         <ul>
             <li class="mb-4">
-                <a href="#doctors" class="text-lg hover:text-green-400">Docteurs</a>
+                <a href="#doctors" class="text-lg hover:text-green-400">DOCTORS</a>
             </li>
             <li class="mb-4">
-                <a href="#patients" class="text-lg hover:text-green-400">Patients</a>
+                <a href="#patients" class="text-lg hover:text-green-400">PATIENT</a>
             </li>
             <li class="mb-4">
-                <a href="#appointments" class="text-lg hover:text-green-400">Rendez-vous</a>
+                <a href="#appointments" class="text-lg hover:text-green-400">APPOINTMENT</a>
             </li>
             <li class="mb-4">
-                <a href="#consultations" class="text-lg hover:text-green-400">Consultations</a>
+                <a href="#consultations" class="text-lg hover:text-green-400">CONSULTATIONS</a>
             </li>
             <li class="mb-4">
-                <a href="#admins" class="text-lg hover:text-green-400">Administrateurs</a>
+                <a href="#admins" class="text-lg hover:text-green-400">ADMIN</a>
             </li>
         </ul>
     </nav>
