@@ -16,7 +16,7 @@
     </header>
     <section id="FormSignIn" class="flex flex-col items-center w-full max-w-lg mx-auto mt-10 p-6">
         <h2 class="text-2xl font-bold mb-4">Log In</h2>
-        <form id="loginForm" action="" method="post" class="w-full space-y-4">
+        <form action="#" method="post" class="w-full space-y-4">
             <div>
                 <label for="first-name" class="block text-xl font-bold">Name</label>
                 <input id="first-name" name="name" type="text" placeholder="Enter your first name" class="w-full p-2 rounded-lg bg-violet-950 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
@@ -25,10 +25,11 @@
                 <label for="password" class="block text-xl font-bold">Password</label>
                 <input id="password" name="password" type="password" placeholder="Enter your password" class="w-full p-2 rounded-lg bg-violet-950 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">
             </div>
-            <button type="submit" name="submit" class="w-full p-3 mt-4 font-bold text-white bg-black rounded-lg hover:bg-green-600">
-                Submit
-            </button>
+            <input type="submit" value="log in" name="submit2" class="w-full p-3 mt-4 font-bold text-white bg-black rounded-lg hover:bg-green-600">
         </form>
+        <div class ="text-red-600">
+        <?php include("login.php"); ?>
+        </div>
     </section>
     <script src="./js/login.js" ></script>
 </body>

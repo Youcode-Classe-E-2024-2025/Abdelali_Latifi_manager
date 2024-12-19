@@ -13,7 +13,7 @@ include('registre.php')
     <header class="flex justify-between items-center px-6 py-4">
         <h1 class="text-2xl font-extrabold">LOGO</h1>
         <div>
-            <button><a href="login_page.php" id="sign_up" class="p-2 text-xl font-bold rounded-lg hover:bg-violet-600">Sign in</a></button>
+            <button><a href="index.php" id="sign_up" class="p-2 text-xl font-bold rounded-lg hover:bg-violet-600">Sign in</a></button>
         </div>
     </header>
 

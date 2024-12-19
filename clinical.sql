@@ -1,5 +1,5 @@
 create DATABASE clinical ;
-USE clinical ;clinical
+USE clinical ;
 -- Table des docteurs
 CREATE TABLE Doctors (
     doctor_id INT PRIMARY KEY AUTO_INCREMENT,
