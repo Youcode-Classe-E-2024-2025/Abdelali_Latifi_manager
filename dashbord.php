@@ -58,6 +58,7 @@
                 <th class="px-4 py-2 text-left">Specialization</th>
                 <th class="px-4 py-2 text-left">Phone Number</th>
                 <th class="px-4 py-2 text-left">Email</th>
+                <th class="px-4 py-2 text-left">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -77,6 +78,7 @@
                 <th class="px-4 py-2 text-left">First Name</th>
                 <th class="px-4 py-2 text-left">Last Name</th>
                 <th class="px-4 py-2 text-left">Email</th>
+                <th class="px-4 py-2 text-left">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -97,6 +99,7 @@
                 <th class="px-4 py-2 text-left">Patient ID</th>
                 <th class="px-4 py-2 text-left">Appointment Date</th>
                 <th class="px-4 py-2 text-left">Status</th>
+                <th class="px-4 py-2 text-left">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -117,6 +120,7 @@
                 <th class="px-4 py-2 text-left">Consultation Date</th>
                 <th class="px-4 py-2 text-left">Diagnosis</th>
                 <th class="px-4 py-2 text-left">Notes</th>
+                <th class="px-4 py-2 text-left">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -136,6 +140,7 @@
                 <th class="px-4 py-2 text-left">First Name</th>
                 <th class="px-4 py-2 text-left">Last Name</th>
                 <th class="px-4 py-2 text-left">Email</th>
+                <th class="px-4 py-2 text-left">Actions</th>
             </tr>
         </thead>
         <tbody>
