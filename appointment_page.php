@@ -76,7 +76,7 @@
                 <!-- Date Selection -->
                 <div class="flex flex-col">
                     <label for="appointment_date" class="text-lg">Select Date and Time</label>
-                    <input type="datetime-local" id="appointment_date" name="appointment_date" class="px-4 py-2 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                    <input type="datetime-local" name="appointment_date" class="px-4 py-2 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
                 </div>
 
                 <!-- Submit Button -->
@@ -90,7 +90,7 @@
 
     <!-- Footer -->
     <footer class="bg-black text-white text-center py-4">
-        <p>&copy; 2024 My Health Application. All rights reserved.</p>
+        <p>2024 My Health Application. All rights reserved.</p>
     </footer>
 
 </body>

@@ -1,6 +1,3 @@
-<?php
-include('registre.php')
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +38,9 @@ include('registre.php')
                 Submit
             </button>
         </form>
+        <?php
+        include('registre.php')
+        ?>
     </section>
     <script src="./js/registre.js" ></script>
 </body>

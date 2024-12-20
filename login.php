@@ -7,9 +7,7 @@
     $query = "SELECT * FROM patients WHERE first_name ='$name' AND password ='$password' ";
     if(mysqli_num_rows(mysqli_query($con, $query))>0){
      $_SESSION['name']= $name;
-   
-     echo '***************';
-     header("location:home.php");
+        header("location:home.php");
  }else{
     echo "your password incorrect ";
  }

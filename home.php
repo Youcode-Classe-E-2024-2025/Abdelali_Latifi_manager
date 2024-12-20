@@ -70,7 +70,7 @@
 
     <!-- Footer -->
     <footer class="bg-black text-white text-center py-4">
-        <p> 2024 My Health Application. All rights reserved.</p>
+        <p>&copy; 2024 My Health Application. All rights reserved.</p>
     </footer>
     <script src="./js/home.js" ></script>
 

@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
     VALUES ('$first_name','$last_name','$email','$password') ";
     
     if(mysqli_query($con, $query)){
-    echo"************************";
+    echo"good";
     }
 }
 ?>
