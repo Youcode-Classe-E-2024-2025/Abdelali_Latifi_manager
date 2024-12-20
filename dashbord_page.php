@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-[url('./img/pexels-pixabay-315938.jpg')] bg-cover bg-no-repeat bg-center text-zinc-50 bg-fixed">
+<body class="bg-[url('./img/black-white-photo-mall.jpg')] bg-cover bg-no-repeat bg-center text-zinc-50 bg-fixed">
 
     <!-- Header -->
     <header class="bg-black text-white p-4 text-center">
@@ -50,7 +50,7 @@
                 <h2 class="text-xl font-semibold mb-4">Liste des Docteurs</h2>
                 <button onclick="toggleModal('doctorModal')" class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Docteur</button>
                 <table class="w-full table-auto shadow-md">
-                    <thead class="bg-black">
+                    <thead class="bg-white text-black">
                         <tr>
                             <th class="px-4 py-2 text-left">ID</th>
                             <th class="px-4 py-2 text-left">First Name</th>
@@ -68,7 +68,7 @@
                     $query = mysqli_query($con, $requete);
                     while($rows = mysqli_fetch_assoc($query)){
                         $id = $rows['doctor_id'];
-                        echo "<tr class='border-t border-gray-200 hover:bg-cyan-50'>";
+                        echo "<tr class='border-t border-gray-200 bg-black text-xl'>";
                         echo "<td class='px-4 py-2'>" . $rows['first_name'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['last_name'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['specialization'] . "</td>";
@@ -116,7 +116,7 @@
                 <h2 class="text-xl font-semibold mb-4">Liste des Patients</h2>
                 <button onclick="toggleModal('patientModal')" class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Patient</button>
                 <table class="w-full table-auto shadow-md">
-                    <thead class="bg-black">
+                    <thead class="bg-white text-black">
                         <tr>
                             <th class="px-4 py-2 text-left">First Name</th>
                             <th class="px-4 py-2 text-left">Last Name</th>
@@ -130,7 +130,7 @@
                     $requete = 'SELECT * FROM patients';
                     $query = mysqli_query($con, $requete);
                     while($rows = mysqli_fetch_assoc($query)){
-                        echo "<tr class='border-t border-gray-200 hover:bg-cyan-50'>";
+                        echo "<tr class='border-t border-gray-200 bg-black text-xl'>";
                         $id = $rows['patient_id'];
                         echo "<td class='px-4 py-2'>" . $rows['first_name'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['last_name'] . "</td>";
@@ -171,7 +171,7 @@
                 <h2 class="text-xl font-semibold mb-4">Liste des Rendez-vous</h2>
                 <button onclick="toggleModal('appointmentModal')" class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Rendez-vous</button>
                 <table class="w-full table-auto shadow-md">
-                    <thead class="bg-black">
+                    <thead class="bg-white text-black">
                         <tr>
                             <th class="px-4 py-2 text-left">ID</th>
                             <th class="px-4 py-2 text-left">Doctor ID</th>
@@ -187,7 +187,7 @@
                     $requete = 'SELECT * FROM appointments';
                     $query = mysqli_query($con, $requete);
                     while($rows = mysqli_fetch_assoc($query)){
-                        echo "<tr class='border-t border-gray-200 hover:bg-cyan-50'>";
+                        echo "<tr class='border-t border-gray-200 bg-black text-xl'>";
                         echo "<td class='px-4 py-2'>" . $rows['appointment_id'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['doctor_id'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['patient_id'] . "</td>";
@@ -237,7 +237,7 @@
                 <h2 class="text-xl font-semibold mb-4">Liste des Consultations</h2>
                 <button onclick="toggleModal('consultationModal')" class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter une Consultation</button>
                 <table class="w-full table-auto shadow-md">
-                    <thead class="bg-black">
+                    <thead class="bg-white text-black">
                         <tr>
                             <th class="px-4 py-2 text-left">consultation_id</th>
                             <th class="px-4 py-2 text-left">appointment_id</th>
@@ -253,7 +253,7 @@
                     $query = mysqli_query($con, $requete);
                     while($rows = mysqli_fetch_assoc($query)){
                         $id = $rows['doctor_id'];
-                        echo "<tr class='border-t border-gray-200 hover:bg-cyan-50'>";
+                        echo "<tr class='border-t border-gray-200 bg-black text-xl'>";
                         echo "<td class='px-4 py-2'>" . $rows['consultation_id'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['appointment_id'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['consultation_date'] . "</td>";
@@ -299,7 +299,7 @@
                 <h2 class="text-xl font-semibold mb-4">Liste des Administrateurs</h2>
                 <button onclick="toggleModal('adminModal')" class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Administrateur</button>
                 <table class="w-full table-auto shadow-md">
-                    <thead class="bg-black">
+                    <thead class="bg-white text-black">
                         <tr>
                             <th class="px-4 py-2 text-left">ID</th>
                             <th class="px-4 py-2 text-left">User Name</th>
@@ -313,7 +313,7 @@
                     $query = mysqli_query($con, $requete);
                     while($rows = mysqli_fetch_assoc($query)){
                         $id = $rows['admin_id'];
-                        echo "<tr class='border-t border-gray-200 hover:bg-cyan-50'>";
+                        echo "<tr class='border-t border-gray-200 bg-black text-xl'>";
                         echo "<td class='px-4 py-2'>" . $rows['username'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['password'] . "</td>";
                         echo "<td class='flex justify-center items-center'><a href='delete.php?id=" . $id . "'><button class='bg-red-600 text-white font-bold text-xl px-2 rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 ease-in-out transform hover:scale-105'>-</button></a></td>";      
