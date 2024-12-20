@@ -45,7 +45,4 @@ CREATE TABLE Admin (
     admin_id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE, -- Nom d'utilisateur pour l'admin
     password VARCHAR(255) NOT NULL, -- Mot de passe hashé
-    first_name VARCHAR(30) NOT NULL,
-    last_name VARCHAR(30) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL -- Email unique pour l'admin
 );

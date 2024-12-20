@@ -48,7 +48,7 @@
       <!-- Section Docteurs -->
 <section id="doctors">
     <h2 class="text-xl font-semibold mb-4">Liste des Docteurs</h2>
-    <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500" onclick="showAddDoctorForm()">Ajouter un Docteur</button>
+    <button class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500" >Ajouter un Docteur</button>
     <table class="w-full table-auto rounded-lg shadow-md">
         <thead class="bg-black">
             <tr>
@@ -62,7 +62,20 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Les données seront chargées dynamiquement -->
+        <?php
+             require 'connexion.php';
+             $requete = "SELECT * FROM doctors ";  
+             $query = mysqli_query($con, $requete);
+             while ($row = mysqli_fetch_assoc($query)) {
+                 echo "<tr class='border-t border-gray-200 hover:bg-black'>";
+                 echo "<td class='px-4 py-2'>" . $row['first_name'] . "</td>";  
+                 echo "<td class='px-4 py-2'>" . $row['last_name'] . "</td>";  
+                 echo "<td class='px-4 py-2'>" . $row['specialization'] . "</td>";  
+                 echo "<td class='px-4 py-2'>" . $row['phone_number'] . "</td>";  
+                 echo "<td class='px-4 py-2'>" . $row['email'] . "</td>";  
+                 echo "</tr>";
+             }
+        ?>
         </tbody>
     </table>
 </section>
@@ -74,15 +87,26 @@
     <table class="w-full table-auto rounded-lg shadow-md">
         <thead class="bg-black">
             <tr>
-                <th class="px-4 py-2 text-left">ID</th>
                 <th class="px-4 py-2 text-left">First Name</th>
                 <th class="px-4 py-2 text-left">Last Name</th>
                 <th class="px-4 py-2 text-left">Email</th>
                 <th class="px-4 py-2 text-left">Actions</th>
             </tr>
         </thead>
+
         <tbody>
-            <!-- Les données seront chargées dynamiquement -->
+             <?php
+             require 'connexion.php';
+             $requete = "SELECT * FROM patients ";  
+             $query = mysqli_query($con, $requete);
+             while ($row = mysqli_fetch_assoc($query)) {
+                 echo "<tr class='border-t border-gray-200 hover:bg-black'>";
+                 echo "<td class='px-4 py-2'>" . $row['first_name'] . "</td>";  
+                 echo "<td class='px-4 py-2'>" . $row['last_name'] . "</td>";  
+                 echo "<td class='px-4 py-2'>" . $row['email'] . "</td>";  
+                 echo "</tr>";
+             }
+        ?>
         </tbody>
     </table>
 </section>
