@@ -1,6 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['name'])) {
+    header("Location: index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +21,7 @@
         <h1 class="text-3xl font-semibold">Welcome, User</h1>
         <p class="text-xl">Manage your information and access important services</p>
         </div>
-       <a href="./index.php"> <div class="absolute top-4 right-10 text-xl font-bold hover:scale-125"><h1>log out</h1></div></a>
+        <a href="./log_out.php"><div  class="text-xl font-bold absolute top-4 right-6" ><h1>log out</h1></div></a>
     </header>
 
     <main class="flex flex-col items-center justify-center p-6 min-h-screen">

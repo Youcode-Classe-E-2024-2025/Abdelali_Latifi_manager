@@ -7,7 +7,6 @@
     $query = "SELECT * FROM admin WHERE username ='$username' AND password ='$password' ";
     if(mysqli_num_rows(mysqli_query($con, $query))>0){
      $_SESSION['name']= $username;
-     echo '***************';
      header("location:dashbord.php");
  }else{
     echo "your password incorrect ";
