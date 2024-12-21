@@ -5,7 +5,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const password = document.getElementById("password").value;
 
     const nameRegex = /^[A-Za-z]{2,}$/;
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; 
+    const passwordRegex = /^(?=.*[A-Za-z\d])[A-Za-z\d]{6,}$/;
 
     let isValid = true;
 
