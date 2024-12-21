@@ -30,6 +30,7 @@
         <div class ="text-red-600">
         <?php include("login.php"); ?>
         </div>
+        <div class="text-xl font-bold text-yellow-500" ><h1>for admin : <a class ="text-white" href="./login_admin_page.php">log in</a></h1></div>
     </section>
     <script src="./js/login.js" ></script>
 </body>

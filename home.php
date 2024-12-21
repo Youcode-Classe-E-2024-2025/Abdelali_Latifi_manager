@@ -9,11 +9,14 @@
 </head>
 <body class="bg-[url('./img/background.jpg')] bg-cover bg-no-repeat bg-center text-zinc-50 bg-fixed">
     <!-- Header -->
-    <header class="bg-black text-white p-6 text-center">
-        <h1 class="text-3xl font-semibold">Welcome to your dashboard, User</h1>
+    <header class="bg-black text-white p-6 text-center relative">
+        <div>
+        <h1 class="text-3xl font-semibold">Welcome, User</h1>
         <p class="text-xl">Manage your information and access important services</p>
+        </div>
+       <a href="./index.php"> <div class="absolute top-4 right-10 text-xl font-bold hover:scale-125"><h1>log out</h1></div></a>
     </header>
-    
+
     <main class="flex flex-col items-center justify-center p-6 min-h-screen">
         <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-4xl">
             <!-- Card: Doctors -->
@@ -21,7 +24,7 @@
                 <img src="./img/team-young-specialist-doctors-standing-corridor-hospital.jpg" alt="Doctor" class="w-full h-40 object-cover rounded-t-lg mb-4">
                 <h3 class="text-xl font-semibold mb-2">Doctors</h3>
                 <p class="mb-4">Browse the list of available doctors, their specialties, and contact details.</p>
-                <a href="#doctors" class="text-green-400 hover:text-white">See More</a>
+                <a href="./doctors_page.html" class="text-green-400 hover:text-white">See More</a>
             </div>
 
             <!-- Card: Appointments -->
@@ -29,7 +32,7 @@
                 <img src="./img/closeup-hands-passing-contract-unrecognizable-businessman.jpg" alt="Appointments" class="w-full h-40 object-cover rounded-t-lg mb-4">
                 <h3 class="text-xl font-semibold mb-2">Appointments</h3>
                 <p class="mb-4">View your scheduled appointments, cancel or modify them as needed.</p>
-                <a href="#appointments" class="text-green-400 hover:text-white">See More</a>
+                <a href="./appointment_page.php" class="text-green-400 hover:text-white">See More</a>
             </div>
 
             <!-- Card: Consultation -->
@@ -37,7 +40,7 @@
                 <img src="./img/patient-telling-doctor-about-symptoms-disease.jpg" alt="Consultation" class="w-full h-40 object-cover rounded-t-lg mb-4">
                 <h3 class="text-xl font-semibold mb-2">Consultation</h3>
                 <p class="mb-4">Review and update your personal information.</p>
-                <a href="#profile" class="text-green-400 hover:text-white">See More</a>
+                <a href="./consulting_page.html" class="text-green-400 hover:text-white">See More</a>
             </div>
         </section>
 

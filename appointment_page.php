@@ -11,9 +11,14 @@
 <body class="bg-[url('./img/background.jpg')] bg-cover bg-no-repeat bg-center text-zinc-50 bg-fixed">
 
     <!-- Header -->
-    <header class="bg-black text-white p-6 text-center">
-        <h1 class="text-3xl font-semibold">Your Appointments</h1>
-        <p class="text-xl">Manage your upcoming medical appointments</p>
+    <header class="bg-black text-white p-6 text-center flex items-center justify-around">
+        <div>
+            <h1 class="text-3xl font-semibold">Your Appointments</h1>
+            <p class="text-xl">Manage your upcoming medical appointments</p>
+        </div>
+        <div>
+           <a href="home.php"> <img src="./img/maison.png" alt="Logo" class="w-16 h-16 object-contain"></a>
+        </div>
     </header>
 
     <!-- Main Content -->
