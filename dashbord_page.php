@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['name'])) {
+    header("Location: login_admin_page.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -121,7 +129,9 @@
                             <th class="px-4 py-2 text-left">First Name</th>
                             <th class="px-4 py-2 text-left">Last Name</th>
                             <th class="px-4 py-2 text-left">Email</th>
-                            <th class="px-4 py-2 text-left">Actions</th>
+                            <th class="px-4 py-2 text-left">password</th>
+                            <th class="px-4 py-2 text-left">delet</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -301,9 +311,9 @@
                 <table class="w-full table-auto shadow-md">
                     <thead class="bg-white text-black">
                         <tr>
-                            <th class="px-4 py-2 text-left">ID</th>
                             <th class="px-4 py-2 text-left">User Name</th>
                             <th class="px-4 py-2 text-left">password</th>
+                            <th class="px-4 py-2 text-left">delet</th>
                         </tr>
                     </thead>
                     <tbody>

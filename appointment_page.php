@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['name'])) {
+    header("Location: index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +17,6 @@
 </head>
 
 <body class="bg-[url('./img/background.jpg')] bg-cover bg-no-repeat bg-center text-zinc-50 bg-fixed">
-
     <!-- Header -->
     <header class="bg-black text-white p-6 text-center flex items-center justify-around">
         <div>
