@@ -42,11 +42,9 @@ $query = "SELECT a.appointment_id, d.first_name, d.last_name, a.appointment_date
           ORDER BY a.appointment_date";
 $appointments_result = mysqli_query($con, $query);
 
-// Récupérer les médecins disponibles
 $doctors_query = "SELECT doctor_id, first_name, last_name FROM doctors";
 $doctors_result = mysqli_query($con, $doctors_query);
 
-// Récupérer les patients disponibles (si nécessaire)
 $patients_query = "SELECT patient_id, first_name, last_name FROM patients";
 $patients_result = mysqli_query($con, $patients_query);
 ?>
@@ -72,10 +70,8 @@ $patients_result = mysqli_query($con, $patients_query);
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="flex flex-col items-center justify-center p-6 min-h-screen">
 
-        <!-- Upcoming Appointments Section -->
         <section class="w-full max-w-6xl mb-8">
             <h2 class="text-2xl font-semibold mb-4 text-zinc-950">Upcoming Appointments</h2>
 
@@ -104,18 +100,15 @@ $patients_result = mysqli_query($con, $patients_query);
             </table>
         </section>
 
-        <!-- Book New Appointment Section -->
         <section class="w-full max-w-6xl bg-gray-800 p-6 rounded-lg shadow-md">
             <h2 class="text-2xl font-semibold mb-6 text-center">Book a New Appointment</h2>
 
             <form action="#" method="POST" class="space-y-6">
-                <!-- Patient Selection -->
                 <div class="flex flex-col">
                     <label for="patient" class="text-lg">Select a Patient</label>
                     <select id="patient" name="patient" class="px-4 py-2 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
                         <option value="" disabled selected>Select Patient</option>
                         <?php
-                        // Boucle pour afficher les patients dans le formulaire
                         while ($patient = mysqli_fetch_assoc($patients_result)) {
                             echo "<option value='" . $patient['patient_id'] . "'>" . $patient['first_name'] . " " . $patient['last_name'] . "</option>";
                         }
@@ -123,13 +116,11 @@ $patients_result = mysqli_query($con, $patients_query);
                     </select>
                 </div>
 
-                <!-- Doctor Selection -->
                 <div class="flex flex-col">
                     <label for="doctor" class="text-lg">Select a Doctor</label>
                     <select id="doctor" name="doctor" class="px-4 py-2 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
                         <option value="" disabled selected>Select Doctor</option>
                         <?php
-                        // Boucle pour afficher les médecins dans le formulaire
                         while ($doctor = mysqli_fetch_assoc($doctors_result)) {
                             echo "<option value='" . $doctor['doctor_id'] . "'>" . $doctor['first_name'] . " " . $doctor['last_name'] . "</option>";
                         }
@@ -137,13 +128,11 @@ $patients_result = mysqli_query($con, $patients_query);
                     </select>
                 </div>
 
-                <!-- Date Selection -->
                 <div class="flex flex-col">
                     <label for="appointment_date" class="text-lg">Select Date and Time</label>
                     <input type="datetime-local" name="appointment_date" class="px-4 py-2 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
                 </div>
 
-                <!-- Submit Button -->
                 <div class="flex justify-center">
                     <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-500 transition">Book Appointment</button>
                 </div>

@@ -7,10 +7,8 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = htmlspecialchars(trim($_POST['password']));
 
-    // Hachage du mot de passe avant de l'enregistrer
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Requête pour insérer les données dans la base de données
     $query = "INSERT INTO patients (first_name, last_name, email, password)
               VALUES ('$first_name', '$last_name', '$email', '$hashed_password')";
 

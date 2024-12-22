@@ -8,7 +8,7 @@
 </head>
 <body class="bg-[url('./img/pexels-pixabay-315938.jpg')] bg-cover bg-no-repeat bg-center text-zinc-50 bg-fixed">
     <header class="flex justify-between items-center px-6 py-4">
-        <h1 class="text-2xl font-extrabold">LOGO</h1>
+        <h1 class="text-2xl font-extrabold">CLINICAL</h1>
         <div>
             <button><a href="./registre_page.php" id="sign_up" class="p-2 text-xl font-bold rounded-lg hover:bg-violet-600">Sign Up</a></button>
             

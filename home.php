@@ -55,8 +55,7 @@ if (!isset($_SESSION['name'])) {
         <!-- Contact Us Section -->
         <section id="contact" class="w-full max-w-4xl bg-gray-800 p-6 rounded-lg shadow-md mt-10">
             <h2 class="text-2xl font-semibold mb-6 text-center">Contact Us</h2>
-            <!-- Contact Form -->
-            <form action="./contact.php" method="POST" class="space-y-6">
+            <form action="./contact.php" method="post" class="space-y-6">
                 <div class="flex flex-col">
                     <label for="name" class="text-lg">Your Name</label>
                     <input type="text" id="name" name="name" class="px-4 py-2 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-400" >
@@ -73,7 +72,7 @@ if (!isset($_SESSION['name'])) {
                 </div>
 
                 <div class="flex justify-center px-10">
-                    <input type="submit" name="submit" value="send" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-500 transition"></input>
+                    <input type="submit" name="submit1" value="send" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-500 transition"></input>
                 </div>
             </form>
         </section>

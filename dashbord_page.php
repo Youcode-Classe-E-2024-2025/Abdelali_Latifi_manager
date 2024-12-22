@@ -24,10 +24,8 @@ if (!isset($_SESSION['name'])) {
         <p>Welcome, Admin</p>
     </header>
 
-    <!-- Main Layout -->
     <section class="flex">
 
-        <!-- Sidebar -->
         <aside class="w-64 bg-gray-800 text-white p-6 min-h-full">
             <nav>
                 <ul>
@@ -50,10 +48,8 @@ if (!isset($_SESSION['name'])) {
             </nav>
         </aside>
 
-        <!-- Main Content -->
         <main class="flex-grow p-6">
 
-            <!-- Section Docteurs -->
             <section id="doctors">
                 <h2 class="text-xl font-semibold mb-4">Liste des Docteurs</h2>
                 <button onclick="toggleModal('doctorModal')" class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Docteur</button>
@@ -92,7 +88,7 @@ if (!isset($_SESSION['name'])) {
             <div id="doctorModal" class="fixed inset-0 text-neutral-950 bg-black bg-opacity-50 flex justify-center items-center hidden">
                 <div class="bg-black text-neutral-50 p-6 shadow-lg w-96">
                     <h3 class="text-xl font-semibold mb-4">Add Doctor</h3>
-                    <form action="add_doctor.php" method="POST">
+                    <form action="./add_doctor.php" method="POST">
                         <div class="mb-4">
                             <label for="first_name" class="block text-sm">First Name</label>
                             <input type="text" id="first_name" name="first_name" class="w-full p-2 border rounded text-neutral-950	" required>
@@ -232,7 +228,6 @@ if (!isset($_SESSION['name'])) {
                         <tr>
                             <th class="px-4 py-2 text-left">User Name</th>
                             <th class="px-4 py-2 text-left">password</th>
-                            <th class="px-4 py-2 text-left">delet</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -245,7 +240,6 @@ if (!isset($_SESSION['name'])) {
                         echo "<tr class='border-t border-gray-200 bg-black text-xl'>";
                         echo "<td class='px-4 py-2'>" . $rows['username'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['password'] . "</td>";
-                        echo "<td class='flex justify-center items-center'><a href='delete.php?id=" . $id . "'><button class='bg-red-600 text-white font-bold text-xl px-2 rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 ease-in-out transform hover:scale-105'>-</button></a></td>";      
                         echo "</tr>";
                     }
                     ?>

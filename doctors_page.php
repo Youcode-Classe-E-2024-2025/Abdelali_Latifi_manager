@@ -29,12 +29,10 @@ if (!isset($_SESSION['name'])) {
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="flex flex-col items-center justify-center p-6 min-h-screen">
 
-        <!-- Doctors Grid Section -->
-        <section class="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Example Doctor 1 -->
+
+    <section class="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-green-600 transition">
                 <img src="./img/doctor-checking-breathing-problem-sick-senior-woman-hospital.jpg" alt="Dr. John Doe" class="w-full h-40 object-cover rounded-lg mb-4">
                 <h3 class="text-xl font-semibold mb-2">Dr. John Doe</h3>
@@ -44,7 +42,6 @@ if (!isset($_SESSION['name'])) {
                 <a href="#" class="text-green-400 hover:text-white">View Profile</a>
             </div>
 
-            <!-- Example Doctor 2 -->
             <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-green-600 transition">
                 <img src="./img/neurologist-doctor-analysing-brain-man-nervous-system-using-brainwave-scanning-headset-researcher-using-high-tech-developing-neurological-innovation-monitoring-side-effects-monitor-screen.jpg" alt="Dr. Jane Smith" class="w-full h-40 object-cover rounded-lg mb-4">
                 <h3 class="text-xl font-semibold mb-2">Dr. Emily Brown</h3>
@@ -54,7 +51,6 @@ if (!isset($_SESSION['name'])) {
                 <a href="#" class="text-green-400 hover:text-white">View Profile</a>
             </div>
 
-            <!-- Example Doctor 3 -->
             <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-green-600 transition">
                 <img src="./img/paediatrician-doctor-examining-child-comfortabe-medical-office-healthcare-childhood-medicine-protection-prevention-concept-little-boy-trust-doctor-feels-calm-positive-emotions.jpg" alt="Dr. Emily Brown" class="w-full h-40 object-cover rounded-lg mb-4">
                 <h3 class="text-xl font-semibold mb-2">Dr. Jane Smith</h3>
@@ -64,8 +60,7 @@ if (!isset($_SESSION['name'])) {
                 <a href="#" class="text-green-400 hover:text-white">View Profile</a>
             </div>
 
-            <!-- Add more doctors here -->
-            <!-- Example Doctor 4 -->
+         
             <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-green-600 transition">
                 <img src="./img/portrait-concentrated-male-doctor-dressed-uniform.jpg" alt="Dr. Alan White" class="w-full h-40 object-cover rounded-lg mb-4">
                 <h3 class="text-xl font-semibold mb-2">Dr. Alan White</h3>

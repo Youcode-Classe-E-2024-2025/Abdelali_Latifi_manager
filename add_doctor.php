@@ -1,5 +1,4 @@
 <?php
-// add_doctor.php
 require 'connexion.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor'])) {

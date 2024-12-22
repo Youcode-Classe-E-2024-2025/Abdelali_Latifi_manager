@@ -1,6 +1,6 @@
 <?php
- include('connexion.php');
- if(isset($_POST['submit'])){
+require 'connexion.php'; 
+if(isset($_POST['submit1'])){
     $name = htmlspecialchars(trim($_POST['name']));
     $email = htmlspecialchars(trim($_POST['email']));
     $message = htmlspecialchars(trim($_POST['message']));
@@ -8,7 +8,6 @@
     VALUES ('$name','$email','$message') ";
 
     if(mysqli_query($con, $query)){
-    header("location: home.php");
     echo"think you for your feedback";
     }
 }
