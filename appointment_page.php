@@ -6,32 +6,23 @@ if (!isset($_SESSION['name'])) {
     exit();
 }
 
-// Connexion à la base de données
 require 'connexion.php';
 
-// Traitement de l'ajout d'un rendez-vous
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor'], $_POST['patient'], $_POST['appointment_date'])) {
     $doctor_id = $_POST['doctor'];
     $patient_id = $_POST['patient'];
     $appointment_date = $_POST['appointment_date'];
 
-    // Validation des données avant insertion
-    if (!empty($doctor_id) && !empty($patient_id) && !empty($appointment_date)) {
-        $query = "INSERT INTO appointments (doctor_id, patient_id, appointment_date, status) 
-                  VALUES ('$doctor_id', '$patient_id', '$appointment_date', 'Scheduled')";
+    $query = "INSERT INTO appointments (doctor_id, patient_id, appointment_date, status) 
+              VALUES ('$doctor_id', '$patient_id', '$appointment_date', 'Scheduled')";
 
-        // Essayer d'exécuter la requête et capturer les erreurs
-        if (mysqli_query($con, $query)) {
-            echo "<script>alert('Appointment booked successfully!');</script>";
-        } else {
-            echo "<script>alert('Error booking appointment: " . mysqli_error($con) . "');</script>";
-        }
+    if (mysqli_query($con, $query)) {
+        echo "<script>alert('Appointment booked successfully!');</script>";
     } else {
-        echo "<script>alert('All fields are required.');</script>";
+        echo "<script>alert('Error booking appointment: " . mysqli_error($con) . "');</script>";
     }
 }
 
-// Suppression d'un rendez-vous
 if (isset($_GET['delete_id'])) {
     $delete_id = $_GET['delete_id'];
     $delete_query = "DELETE FROM appointments WHERE appointment_id = '$delete_id'";
@@ -43,9 +34,8 @@ if (isset($_GET['delete_id'])) {
     }
 }
 
-// Récupérer les rendez-vous du patient
 $patient_id = $_SESSION['patient_id'];
-$query = "SELECT a.appointment_id, d.first_name AS doctor_first_name, d.last_name AS doctor_last_name, a.appointment_date, a.status
+$query = "SELECT a.appointment_id, d.first_name, d.last_name, a.appointment_date, a.status
           FROM appointments a
           JOIN doctors d ON a.doctor_id = d.doctor_id
           WHERE a.patient_id = '$patient_id' AND a.appointment_date >= NOW() 
@@ -102,7 +92,7 @@ $patients_result = mysqli_query($con, $patients_query);
                 <tbody>
                     <?php while ($appointment = mysqli_fetch_assoc($appointments_result)): ?>
                         <tr class="hover:bg-green-600 transition">
-                            <td class="px-4 py-2"><?= $appointment['doctor_first_name'] . ' ' . $appointment['doctor_last_name'] ?></td>
+                            <td class="px-4 py-2"><?= $appointment['first_name'] . ' ' . $appointment['last_name'] ?></td>
                             <td class="px-4 py-2"><?= date('Y-m-d H:i', strtotime($appointment['appointment_date'])) ?></td>
                             <td class="px-4 py-2 text-yellow-400"><?= $appointment['status'] ?></td>
                             <td class="px-4 py-2">
