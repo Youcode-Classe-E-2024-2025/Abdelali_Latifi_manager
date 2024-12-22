@@ -41,7 +41,7 @@ if (!isset($_SESSION['name'])) {
                         <a href="#appointments" class="text-lg hover:text-green-400">APPOINTMENT</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#consultations" class="text-lg hover:text-green-400">CONSULTATIONS</a>
+                        <a href="#consultations" class="text-lg hover:text-green-400">Administrateurs</a>
                     </li>
                     <li class="mb-4">
                         <a href="#admins" class="text-lg hover:text-green-400">ADMIN</a>
@@ -127,7 +127,6 @@ if (!isset($_SESSION['name'])) {
                             <th class="px-4 py-2 text-left">First Name</th>
                             <th class="px-4 py-2 text-left">Last Name</th>
                             <th class="px-4 py-2 text-left">Email</th>
-                            <th class="px-4 py-2 text-left">password</th>
                             <th class="px-4 py-2 text-left">delet</th>
                             
                         </tr>
@@ -143,7 +142,6 @@ if (!isset($_SESSION['name'])) {
                         echo "<td class='px-4 py-2'>" . $rows['first_name'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['last_name'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['email'] . "</td>";
-                        echo "<td class='px-4 py-2'>" . $rows['password'] . "</td>";
                         echo "<td class='flex justify-center items-center'><a href='./delet_patient.php?id=" . $id . "'><button class='bg-red-600 text-white font-bold text-xl px-2 rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 ease-in-out transform hover:scale-105'>-</button></a></td>";      
                         echo "</tr>";
                     }
