@@ -5,6 +5,7 @@ if (!isset($_SESSION['name'])) {
     header("Location: index.php");
     exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +32,7 @@ if (!isset($_SESSION['name'])) {
                 <img src="./img/team-young-specialist-doctors-standing-corridor-hospital.jpg" alt="Doctor" class="w-full h-40 object-cover rounded-t-lg mb-4">
                 <h3 class="text-xl font-semibold mb-2">Doctors</h3>
                 <p class="mb-4">Browse the list of available doctors, their specialties, and contact details.</p>
-                <a href="./doctors_page.html" class="text-green-400 hover:text-white">See More</a>
+                <a href="doctors_page.php" class="text-green-400 hover:text-white">See More</a>
             </div>
 
             <!-- Card: Appointments -->
@@ -39,7 +40,7 @@ if (!isset($_SESSION['name'])) {
                 <img src="./img/closeup-hands-passing-contract-unrecognizable-businessman.jpg" alt="Appointments" class="w-full h-40 object-cover rounded-t-lg mb-4">
                 <h3 class="text-xl font-semibold mb-2">Appointments</h3>
                 <p class="mb-4">View your scheduled appointments, cancel or modify them as needed.</p>
-                <a href="./appointment_page.php" class="text-green-400 hover:text-white">See More</a>
+                <a href="appointment_page.php" class="text-green-400 hover:text-white">See More</a>
             </div>
 
             <!-- Card: Consultation -->
@@ -47,7 +48,7 @@ if (!isset($_SESSION['name'])) {
                 <img src="./img/patient-telling-doctor-about-symptoms-disease.jpg" alt="Consultation" class="w-full h-40 object-cover rounded-t-lg mb-4">
                 <h3 class="text-xl font-semibold mb-2">Consultation</h3>
                 <p class="mb-4">Review and update your personal information.</p>
-                <a href="./consulting_page.html" class="text-green-400 hover:text-white">See More</a>
+                <a href="consulting_page.php" class="text-green-400 hover:text-white">See More</a>
             </div>
         </section>
 
@@ -55,7 +56,7 @@ if (!isset($_SESSION['name'])) {
         <section id="contact" class="w-full max-w-4xl bg-gray-800 p-6 rounded-lg shadow-md mt-10">
             <h2 class="text-2xl font-semibold mb-6 text-center">Contact Us</h2>
             <!-- Contact Form -->
-            <form action="#" method="POST" class="space-y-6">
+            <form action="./contact.php" method="POST" class="space-y-6">
                 <div class="flex flex-col">
                     <label for="name" class="text-lg">Your Name</label>
                     <input type="text" id="name" name="name" class="px-4 py-2 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-400" >
@@ -72,7 +73,7 @@ if (!isset($_SESSION['name'])) {
                 </div>
 
                 <div class="flex justify-center px-10">
-                    <input type="submit" value="send" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-500 transition"></input>
+                    <input type="submit" name="submit" value="send" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-500 transition"></input>
                 </div>
             </form>
         </section>

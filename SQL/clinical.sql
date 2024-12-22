@@ -30,15 +30,14 @@ CREATE TABLE Appointments (
     FOREIGN KEY (patient_id) REFERENCES Patients(patient_id) ON DELETE CASCADE
 );
 
--- Table des consultations
-    CREATE TABLE Consultations (
-        consultation_id INT PRIMARY KEY AUTO_INCREMENT,
-        appointment_id INT NOT NULL,
-        consultation_date DATETIME NOT NULL,
-        diagnosis VARCHAR(255),
-        notes TEXT,
-        FOREIGN KEY (appointment_id) REFERENCES Appointments(appointment_id) ON DELETE CASCADE
-    );
+-- Table des contact
+ CREATE TABLE contact (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+);
+
 
 -- Table unique pour l'administrateur
 CREATE TABLE Admin (

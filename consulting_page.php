@@ -25,7 +25,7 @@ if (!isset($_SESSION['name'])) {
             <p class="text-xl">Review the details of your consultations</p>
         </div>
         <div>
-           <a href="home.php"> <img src="./img/maison.png" alt="Logo" class="w-16 h-16 object-contain"></a>
+           <a href="./home.php"> <img src="./img/maison.png" alt="Logo" class="w-16 h-16 object-contain"></a>
         </div>
     </header>
 

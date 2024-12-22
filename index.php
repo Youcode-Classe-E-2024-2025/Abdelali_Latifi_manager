@@ -10,7 +10,7 @@
     <header class="flex justify-between items-center px-6 py-4">
         <h1 class="text-2xl font-extrabold">LOGO</h1>
         <div>
-            <button><a href="registre_page.php" id="sign_up" class="p-2 text-xl font-bold rounded-lg hover:bg-violet-600">Sign Up</a></button>
+            <button><a href="./registre_page.php" id="sign_up" class="p-2 text-xl font-bold rounded-lg hover:bg-violet-600">Sign Up</a></button>
             
         </div>
     </header>
@@ -28,9 +28,9 @@
             <input type="submit" value="log in" name="submit2" class="w-full p-3 mt-4 font-bold text-white bg-black rounded-lg hover:bg-green-600">
         </form>
         <div class ="text-red-600">
-        <?php include("login.php"); ?>
+        <?php include("./login.php"); ?>
         </div>
-        <div class="text-xl font-bold text-yellow-500" ><h1>for admin : <a class ="text-white" href="./login_admin_page.php">log in</a></h1></div>
+        <div class="text-xl font-bold text-yellow-500" ><h1>for admin : <a class ="text-white" href="login_admin_page.php">log in</a></h1></div>
     </section>
     <script src="./js/login.js" ></script>
 </body>

@@ -60,13 +60,12 @@ if (!isset($_SESSION['name'])) {
                 <table class="w-full table-auto shadow-md">
                     <thead class="bg-white text-black">
                         <tr>
-                            <th class="px-4 py-2 text-left">ID</th>
                             <th class="px-4 py-2 text-left">First Name</th>
                             <th class="px-4 py-2 text-left">Last Name</th>
                             <th class="px-4 py-2 text-left">Specialization</th>
                             <th class="px-4 py-2 text-left">Phone Number</th>
                             <th class="px-4 py-2 text-left">Email</th>
-                            <th class="px-4 py-2 text-left">Actions</th>
+                            <th class="px-4 py-2 text-left">delete doctor</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -82,7 +81,7 @@ if (!isset($_SESSION['name'])) {
                         echo "<td class='px-4 py-2'>" . $rows['specialization'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['phone_number'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['email'] . "</td>";
-                        echo "<td class='flex justify-center items-center'><a href='delete.php?id=" . $id . "'><button class='bg-red-600 text-white font-bold text-xl px-2 rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 ease-in-out transform hover:scale-105'>-</button></a></td>";      
+                        echo "<td class='flex justify-center items-center'><a href='delet_doctor.php?id=" . $id . "'><button class='bg-red-600 text-white font-bold text-xl px-2 rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 ease-in-out transform hover:scale-105'>-</button></a></td>"; 
                         echo "</tr>";
                     }
                     ?>
@@ -146,7 +145,7 @@ if (!isset($_SESSION['name'])) {
                         echo "<td class='px-4 py-2'>" . $rows['last_name'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['email'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $rows['password'] . "</td>";
-                        echo "<td class='flex justify-center items-center'><a href='delete.php?id=" . $id . "'><button class='bg-red-600 text-white font-bold text-xl px-2 rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 ease-in-out transform hover:scale-105'>-</button></a></td>";      
+                        echo "<td class='flex justify-center items-center'><a href='./delet_patient.php?id=" . $id . "'><button class='bg-red-600 text-white font-bold text-xl px-2 rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 ease-in-out transform hover:scale-105'>-</button></a></td>";      
                         echo "</tr>";
                     }
                     ?>       
@@ -178,132 +177,129 @@ if (!isset($_SESSION['name'])) {
             </div>
             <!-- Section Rendez-vous -->
             <section id="appointments" class="mt-8">
-                <h2 class="text-xl font-semibold mb-4">Liste des Rendez-vous</h2>
-                <button onclick="toggleModal('appointmentModal')" class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Rendez-vous</button>
-                <table class="w-full table-auto shadow-md">
-                    <thead class="bg-white text-black">
-                        <tr>
-                            <th class="px-4 py-2 text-left">ID</th>
-                            <th class="px-4 py-2 text-left">Doctor ID</th>
-                            <th class="px-4 py-2 text-left">Patient ID</th>
-                            <th class="px-4 py-2 text-left">Appointment Date</th>
-                            <th class="px-4 py-2 text-left">Status</th>
-                            <th class="px-4 py-2 text-left">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+    <h2 class="text-xl font-semibold mb-4">Liste des Rendez-vous</h2>
+    <button onclick="toggleModal('appointmentModal')" class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter un Rendez-vous</button>
+    <table class="w-full table-auto shadow-md">
+        <thead class="bg-white text-black">
+            <tr>
+                <th class="px-4 py-2 text-left">ID</th>
+                <th class="px-4 py-2 text-left">Doctor ID</th>
+                <th class="px-4 py-2 text-left">Patient ID</th>
+                <th class="px-4 py-2 text-left">Appointment Date</th>
+                <th class="px-4 py-2 text-left">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+        require 'connexion.php';
+        $requete = 'SELECT * FROM appointments';
+        $query = mysqli_query($con, $requete);
+        while($rows = mysqli_fetch_assoc($query)){
+            echo "<tr class='border-t border-gray-200 bg-black text-xl'>";
+            echo "<td class='px-4 py-2'>" . $rows['appointment_id'] . "</td>";
+            echo "<td class='px-4 py-2'>" . $rows['doctor_id'] . "</td>";
+            echo "<td class='px-4 py-2'>" . $rows['patient_id'] . "</td>";
+            echo "<td class='px-4 py-2'>" . $rows['appointment_date'] . "</td>";
+            echo "<td class='px-4 py-2'>" . $rows['status'] . "</td>";
+            echo "</tr>";
+        }
+        ?>
+        </tbody>
+    </table>
+</section>
+
+<!-- Modal for Adding Appointment -->
+<div id="appointmentModal" class="fixed inset-0 text-zinc-950 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-black text-neutral-50 p-6 shadow-lg w-96">
+        <h3 class="text-xl font-semibold mb-4">Add Appointment</h3>
+        <form action="add_appointment.php" method="POST">
+            
+            <!-- Doctor Selection -->
+            <div class="mb-4">
+                <label for="doctor_id" class="block text-sm">Doctor</label>
+                <select id="doctor_id" name="doctor_id" class="w-full p-2 border rounded" required>
+                    <option value="" disabled selected>Select Doctor</option>
                     <?php
+                    // Récupérer les docteurs depuis la base de données
                     require 'connexion.php';
-                    $requete = 'SELECT * FROM appointments';
-                    $query = mysqli_query($con, $requete);
-                    while($rows = mysqli_fetch_assoc($query)){
-                        echo "<tr class='border-t border-gray-200 bg-black text-xl'>";
-                        echo "<td class='px-4 py-2'>" . $rows['appointment_id'] . "</td>";
-                        echo "<td class='px-4 py-2'>" . $rows['doctor_id'] . "</td>";
-                        echo "<td class='px-4 py-2'>" . $rows['patient_id'] . "</td>";
-                        echo "<td class='px-4 py-2'>" . $rows['appointment_date'] . "</td>";
-                        echo "<td class='px-4 py-2'>" . $rows['status'] . "</td>";
-                        echo "<td class='flex justify-center items-center'><a href='delete.php?id=" . $id . "'><button class='bg-red-600 text-white font-bold text-xl px-2 rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 ease-in-out transform hover:scale-105'>-</button></a></td>";      
-                        echo "</tr>";
+                    $doctor_query = "SELECT doctor_id, first_name, last_name FROM doctors";
+                    $doctor_result = mysqli_query($con, $doctor_query);
+                    while ($doctor = mysqli_fetch_assoc($doctor_result)) {
+                        echo "<option value='" . $doctor['doctor_id'] . "'>" . $doctor['first_name'] . " " . $doctor['last_name'] . "</option>";
                     }
                     ?>
-                    </tbody>
-                </table>
-            </section>
-
-            <!-- Modal for Adding Appointment -->
-            <div id="appointmentModal" class="fixed inset-0 text-zinc-950 bg-black bg-opacity-50 flex justify-center items-center hidden">
-            <div class="bg-black text-neutral-50 p-6 shadow-lg w-96">
-            <h3 class="text-xl font-semibold mb-4">Add Appointment</h3>
-                    <form action="add_appointment.php" method="POST">
-                        <div class="mb-4">
-                            <label for="doctor_id" class="block text-sm">Doctor ID</label>
-                            <input type="text" id="doctor_id" name="doctor_id" class="w-full p-2 border rounded" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="patient_id" class="block text-sm">Patient ID</label>
-                            <input type="text" id="patient_id" name="patient_id" class="w-full p-2 border rounded" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="appointment_date" class="block text-sm">Appointment Date</label>
-                            <input type="datetime-local" id="appointment_date" name="appointment_date" class="w-full p-2 border rounded" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="status" class="block text-sm">Status</label>
-                            <select id="status" name="status" class="w-full p-2 border rounded" required>
-                                <option value="pending">Pending</option>
-                                <option value="confirmed">Confirmed</option>
-                                <option value="cancelled">Cancelled</option>
-                            </select>
-                        </div>
-                        <input type="submit" name="appointement" value="save" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500"></input>
-                        <button type="button" onclick="toggleModal('appointmentModal')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500">Cancel</button>
-                    </form>
-                </div>
+                </select>
             </div>
+            
+            <!-- Patient Selection -->
+            <div class="mb-4">
+                <label for="patient_id" class="block text-sm">Patient</label>
+                <select id="patient_id" name="patient_id" class="w-full p-2 border rounded" required>
+                    <option value="" disabled selected>Select Patient</option>
+                    <?php
+                    // Récupérer les patients depuis la base de données
+                    $patient_query = "SELECT patient_id, first_name, last_name FROM patients";
+                    $patient_result = mysqli_query($con, $patient_query);
+                    while ($patient = mysqli_fetch_assoc($patient_result)) {
+                        echo "<option value='" . $patient['patient_id'] . "'>" . $patient['first_name'] . " " . $patient['last_name'] . "</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            
+            <!-- Appointment Date -->
+            <div class="mb-4">
+                <label for="appointment_date" class="block text-sm">Appointment Date</label>
+                <input type="datetime-local" id="appointment_date" name="appointment_date" class="w-full p-2 border rounded" required>
+            </div>
+            
+            <!-- Status Selection -->
+            <div class="mb-4">
+                <label for="status" class="block text-sm">Status</label>
+                <select id="status" name="status" class="w-full p-2 border rounded" required>
+                    <option value="pending">Pending</option>
+                    <option value="confirmed">Confirmed</option>
+                    <option value="cancelled">Cancelled</option>
+                </select>
+            </div>
+            
+            <!-- Submit and Cancel Buttons -->
+            <input type="submit" name="appointement" value="Save" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500">
+            <button type="button" onclick="toggleModal('appointmentModal')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500">Cancel</button>
+        </form>
+    </div>
+</div>
+
 
             <!-- Section Consultations -->
             <section id="consultations" class="mt-8">
                 <h2 class="text-xl font-semibold mb-4">Liste des Consultations</h2>
-                <button onclick="toggleModal('consultationModal')" class="bg-green-600 text-white px-4 py-2 rounded mb-4 hover:bg-green-500">Ajouter une Consultation</button>
                 <table class="w-full table-auto shadow-md">
                     <thead class="bg-white text-black">
                         <tr>
-                            <th class="px-4 py-2 text-left">consultation_id</th>
-                            <th class="px-4 py-2 text-left">appointment_id</th>
-                            <th class="px-4 py-2 text-left">diagnosis</th>
-                            <th class="px-4 py-2 text-left">note</th>
-                            <th class="px-4 py-2 text-left">action</th>
+                            <th class="px-4 py-2 text-left">contact_id</th>
+                            <th class="px-4 py-2 text-left">name</th>
+                            <th class="px-4 py-2 text-left">email</th>
+                            <th class="px-4 py-2 text-left">message</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
                     require 'connexion.php';
-                    $requete = 'SELECT * FROM consultations';
+                    $requete = 'SELECT * FROM contact';
                     $query = mysqli_query($con, $requete);
                     while($rows = mysqli_fetch_assoc($query)){
-                        $id = $rows['doctor_id'];
                         echo "<tr class='border-t border-gray-200 bg-black text-xl'>";
-                        echo "<td class='px-4 py-2'>" . $rows['consultation_id'] . "</td>";
-                        echo "<td class='px-4 py-2'>" . $rows['appointment_id'] . "</td>";
-                        echo "<td class='px-4 py-2'>" . $rows['consultation_date'] . "</td>";
-                        echo "<td class='px-4 py-2'>" . $rows['diagnosis'] . "</td>";
-                        echo "<td class='px-4 py-2'>" . $rows['notes'] . "</td>";
-                        echo "<td class='flex justify-center items-center'><a href='delete.php?id=" . $id . "'><button class='bg-red-600 text-white font-bold text-xl px-2 rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 ease-in-out transform hover:scale-105'>-</button></a></td>";      
+                        echo "<td class='px-4 py-2'>" . $rows['id'] . "</td>";
+                        echo "<td class='px-4 py-2'>" . $rows['name'] . "</td>";
+                        echo "<td class='px-4 py-2'>" . $rows['email'] . "</td>";
+                        echo "<td class='px-4 py-2'>" . $rows['message'] . "</td>";
                         echo "</tr>";
                     }
                     ?>                             
                     </tbody>
                 </table>
             </section>
-
-            <!-- Modal for Adding Consultation -->
-            <div id="consultationModal" class="fixed inset-0 text-zinc-950 bg-black bg-opacity-50 flex justify-center items-center hidden">
-            <div class="bg-black text-neutral-50 p-6 shadow-lg w-96">
-            <h3 class="text-xl font-semibold mb-4">Add Consultation</h3>
-                    <form action="add_consultation.php" method="POST">
-                        <div class="mb-4">
-                            <label for="doctor_id" class="block text-sm">Doctor ID</label>
-                            <input type="text" id="doctor_id" name="doctor_id" class="w-full p-2 border rounded" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="patient_id" class="block text-sm">Patient ID</label>
-                            <input type="text" id="patient_id" name="patient_id" class="w-full p-2 border rounded" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="consultation_date" class="block text-sm">Consultation Date</label>
-                            <input type="datetime-local" id="consultation_date" name="consultation_date" class="w-full p-2 border rounded" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="consultation_type" class="block text-sm">Consultation Type</label>
-                            <input type="text" id="consultation_type" name="consultation_type" class="w-full p-2 border rounded" required>
-                        </div>
-                        <input type="submit" value="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500"></input>
-                        <button type="button" onclick="toggleModal('consultationModal')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500">Cancel</button>
-                    </form>
-                </div>
-            </div>
-
             <!-- Section Admins -->
             <section id="admins" class="mt-8">
                 <h2 class="text-xl font-semibold mb-4">Liste des Administrateurs</h2>

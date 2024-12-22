@@ -1,6 +1,6 @@
 <?php
-include('connexion.php');
-if(isset($_POST['submit'])){
+ include('connexion.php');
+ if(isset($_POST['submit'])){
     $first_name = htmlspecialchars(trim($_POST['first_name']));
     $last_name = htmlspecialchars(trim($_POST['last_name']));
     $email = $_POST['email'];
